@@ -1,0 +1,354 @@
+body {
+  background-color: #add8e6;
+}
+
+.horizontal-menu {
+  height: 100px;
+  background-color: #0D47A1;
+  border-radius: 10px;
+}
+
+.horizontal-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.horizontal-menu li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.horizontal-menu a {
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 18px;
+  line-height: 100px;
+}
+
+.last {
+  position: absolute;
+  top: 10%;
+  right: 30px;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+.last a {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.menu-item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+
+.date-time {
+  position: fixed;
+  bottom: 10px;
+  right: 50px;
+  background-color: #2980b9;
+  color: white;
+  padding: 10px 100px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+
+
+.left-gray-block {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  width: 700px;
+  height: 500px;
+  padding: 20px;
+  position: absolute;
+  top: 150px;
+  left: 70px;
+}
+
+.left-gray-block h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.left-gray-block .table-wrapper {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.left-gray-block table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.left-gray-block th,
+.left-gray-block td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 70px;
+}
+
+.left-gray-block th {
+  background-color: #B1D4E0;
+}
+
+.left-gray-block tr:nth-child(even) {
+  background-color: #C6E0F5;
+}
+
+.left-gray-block tr:nth-child(odd) {
+  background-color: #9FC5E8;
+}
+
+
+.product-sale {
+  background-color: #2980b9;
+  border-radius: 10px;
+  width: 500px;
+  height: 150px;
+  padding: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-sale h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.product-sale input {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.product-sale button {
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  padding: 5px 10px;
+}
+
+
+.right-gray-block {
+   background-color: #f2f2f2;
+  border-radius: 10px;
+  width: 700px;
+  height: 500px;
+  padding: 20px;
+  position: absolute;
+  top: 150px;
+  right: 70px;
+}
+
+.right-gray-block h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.right-gray-block .table-wrapper {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.right-gray-block table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.right-gray-block th,
+.right-gray-block td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 70px;
+}
+
+.right-gray-block th {
+  background-color: #B1D4E0;
+}
+
+.right-gray-block tr:nth-child(even) {
+  background-color: #C6E0F5;
+}
+
+.right-gray-block tr:nth-child(odd) {
+  background-color: #9FC5E8;
+}
+
+.fixed-block {
+    position: fixed;
+    bottom: 10px;
+    left: 50px;
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 100px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+
+.purchases {
+background-color: #f2f2f2;
+border-radius: 10px;
+width: 700px;
+height: 500px;
+padding: 20px;
+position: absolute;
+top: 150px;
+left: 70px;
+}
+
+.purchases h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.purchases .table-wrapper {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.purchases table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.purchases th,
+.purchases td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 70px;
+}
+
+.purchases .table-header {
+  background-color: #B1D4E0;
+}
+
+.purchases tr:nth-child(even) {
+  background-color: #C6E0F5;
+}
+
+.purchases tr:nth-child(odd) {
+  background-color: #9FC5E8;
+}
+
+.right-purchases {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  width: 700px;
+  height: 600px;
+  padding: 20px;
+  position: absolute;
+  top: 150px;
+  right: 70px;
+}
+
+.right-purchases label {
+  display: inline-block;
+  width: 70px;
+  margin-right: 20px;
+}
+
+.right-purchases input[type="text"],
+.right-purchases input[type="number"],
+.right-purchases input[type="date"] {
+  display: inline-block;
+  width: calc(100% - 90px);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.right-purchases button {
+  margin-top: 20px;
+}
+
+.right-purchases h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sales {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  width: 500px;
+  height: 600px;
+  padding: 20px;
+  position: absolute;
+  top: 150px;
+  left: 100px;
+}
+
+.sales-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sales-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.sales-table th,
+.sales-table td {
+  padding: 10px;
+  border: 1px solid #B1D4E0;
+  width: calc(100% / 3);
+}
+
+
+.sales-table th {
+  background-color: #B1D4E0;
+  color: white;
+}
+
+.chek {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    width: 500px;
+    height: 600px;
+    padding: 20px;
+    position: absolute;
+    top: 150px;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chek-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.last-sold-date,
+.average-check {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.last-sold-date span,
+.average-check span {
+    font-weight: bold;
+}
+
+
+

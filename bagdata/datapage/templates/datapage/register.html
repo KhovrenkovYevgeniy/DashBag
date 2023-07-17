@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Реєстрація</title>
+  <style>
+    body {
+      background-color: #ccc;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .form-container {
+      background-color: #00bfff;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 auto;
+      width: 300px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    input[type=submit] {
+      background-color: #00bfff;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type=submit]:hover {
+      background-color: #007fff;
+    }
+
+    .login-btn {
+            background-color: #00bfff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .login-btn:hover {
+            background-color: #007fff;
+        }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Реєстрація</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Реєстрація</button>
+        <a href="{% url 'login' %}" class="login-btn">Авторизація</a>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Авторизація</title>
+  <style>
+    body {
+      background-color: #ccc;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .form-container {
+      background-color: #00bfff;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 auto;
+      width: 300px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    input[type=submit] {
+      background-color: #00bfff;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    input[type=submit]:hover {
+      background-color: #007fff;
+    }
+
+    .register-link {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      padding: 8px 20px;
+    }
+
+    .register-link:hover {
+      background-color: #fff;
+      color: #00bfff;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Авторизація</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="{{ form.username.id_for_label }}">Логін:</label>
+      {{ form.username }}
+      <label for="{{ form.password.id_for_label }}">Пароль:</label>
+      {{ form.password }}
+      <input type="submit" value="Войти">
+      <a href="{% url 'register' %}" class="register-link">Реєстрація</a>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{% extends 'datapage/base.html' %}
+
+{% block content %}
+
+<div class="sales">
+  <h2 class="sales-heading">Історія продаж</h2>
+  <table class="sales-table">
+    <thead>
+      <tr>
+        <th>Назва товару</th>
+        <th>Код товару</th>
+        <th>Кількість проданих</th>
+        <th>Дата продажу</th>
+        <th>Ціна</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sale in sales %}
+      <tr>
+        <td>{{ sale.name }}</td>
+        <td>{{ sale.code }}</td>
+        <td>{{ sale.quantity_of_sold }}</td>
+        <td>{{ sale.sold_date }}</td>
+        <td>{{ sale.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="chek">
+  <h2 class="chek-heading">Середній чек</h2>
+  <p class="last-sold-date">Дата останньої продажі: <span>{{ last_sold_date }}</span></p>
+  <p class="average-check">Середній чек за цей день: <span>{{ average_check }}</span> гривень</p>
+</div>
+
+
+
+
+{% endblock %}

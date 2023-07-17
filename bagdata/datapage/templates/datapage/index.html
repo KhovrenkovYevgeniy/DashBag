@@ -1,0 +1,86 @@
+{% extends 'datapage/base.html' %}
+
+{% block content %}
+
+<div class="left-gray-block">
+  <h3>Товар</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>назва</th>
+          <th>код</th>
+          <th>кількість</th>
+          <th>ціна</th>
+          <th>дата</th>
+          <th>тер.придатності</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% with date=date %}
+          {% for product in maindata %}
+            {% if product.arrived_date|date:'Y-m-d' <= date and product.expiration_date|date:'Y-m-d' > date %}
+              <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.code }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.arrived_date|date:'Y-m-d' }}</td>
+                <td>{{ product.expiration_date|date:'Y-m-d' }}</td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        {% endwith %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="product-sale">
+    <h3>Продажа</h3>
+    <form method="post" action="{% url 'home' %}">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Назва">
+      <input type="text" name="code" placeholder="Код">
+      <input type="number" name="quantity" placeholder="Кількість">
+      <input type="number" name="price" placeholder="Ціна">
+      <button type="submit">Продати</button>
+    </form>
+</div>
+
+
+<div class="right-gray-block">
+  <h3>Повернення</h3>
+  <table class="table-wrapper">
+    <thead>
+      <tr>
+        <th>назва</th>
+        <th>код</th>
+        <th>кількість</th>
+        <th>ціна</th>
+        <th>дата</th>
+        <th>тер.придат.</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% with date=date %}
+        {% for product in maindata %}
+          {% if product.expiration_date|date:'Y-m-d' <= date  %}
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.code }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.arrived_date|date:'Y-m-d' }}</td>
+              <td>{{ product.expiration_date|date:'Y-m-d' }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      {% endwith %}
+    </tbody>
+  </table>
+</div>
+
+
+
+{% endblock %}

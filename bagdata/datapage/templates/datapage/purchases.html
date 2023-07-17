@@ -1,0 +1,53 @@
+{% extends 'datapage/base.html' %}
+
+{% block content %}
+
+
+<div class="purchases">
+  <h3>Товар в дорозі</h3>
+  <table>
+    <thead>
+      <tr>
+        <th class="table-header">назва</th>
+        <th class="table-header">код</th>
+        <th class="table-header">кількість</th>
+        <th class="table-header">ціна</th>
+        <th class="table-header">ціна закупки</th>
+        <th class="table-header">дата</th>
+        <th class="table-header">тер.придат.</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for product in buydata %}
+        {% if product.arrived_date|date:'Y-m-d' > date %}
+          <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.code }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.provider_price }}</td>
+            <td>{{ product.arrived_date }}</td>
+            <td>{{ product.expiration_date }}</td>
+          </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="right-purchases">
+  <h3>Додати запис</h3>
+  <form action="{% url 'purchases' %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <div>
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+      </div>
+    {% endfor %}
+    <button type="submit">Додати</button>
+  </form>
+</div>
+
+
+{% endblock %}
